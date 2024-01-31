@@ -1,11 +1,12 @@
 import React from 'react';
-import { FlatList, View } from 'react-native';
+import { FlatList } from 'react-native';
 import Post from '../Post';
 import Stories from '../Stories';
 import styles from './styles';
 
 const posts =  [
     {
+      id:1,
         user: {
             image:"https://pxbar.com/wp-content/uploads/2023/09/boys-dp-stylish-2.jpg",
             name: "Lukas",
@@ -16,6 +17,7 @@ const posts =  [
         likesCount: 6588,
       },
       {
+        id:2,
         user: {
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0WBdx-uQMHa20z-QZrfMDtYAoGD1PMkRvCR-CavY518hDoMaVSayL4iOu5R3eKQEiHe0&usqp=CAU",
             name: "Jubin Shah",
@@ -26,6 +28,7 @@ const posts =  [
         likesCount: 24,
       },
       {
+        id:3,
         user: {
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdn8USmxghHRZLSSBDHtIWpZNZWFJV841fwJuYCOAerg&s",
             name: "John",
@@ -36,6 +39,7 @@ const posts =  [
         likesCount: 12,
       },
       {
+        id:4,
         user: {
             image:"https://pxbar.com/wp-content/uploads/2023/09/boys-dp-stylish-2.jpg",
             name: "Lukas",
@@ -51,6 +55,7 @@ const Feed = ()=>(
         <FlatList 
         style={styles.container}
          data={posts}
+         keyExtractor={({id})=>id}
          renderItem={({item})=><Post post={item}/>}
          ListHeaderComponent={Stories} 
         />
